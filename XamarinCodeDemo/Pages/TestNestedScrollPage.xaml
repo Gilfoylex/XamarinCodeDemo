@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ct="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="XamarinCodeDemo.Pages.TestNestedScrollPage">
+    <ContentPage.Content>
+        <!--<ct:NestedParentCollectionView>
+            <ct:NestedParentCollectionView.Header>
+                <Grid HeightRequest="180" BackgroundColor="Aqua" />
+            </ct:NestedParentCollectionView.Header>
+            <ct:NestedParentCollectionView.ItemsSource>
+                <x:Array Type="{x:Type system:String}">
+                    <x:String>A</x:String>
+                </x:Array>
+            </ct:NestedParentCollectionView.ItemsSource>
+            <ct:NestedParentCollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Grid BackgroundColor="Black" HeightRequest="80"></Grid>
+                        <ct:NestedChildCollectionView>
+                            <ct:NestedChildCollectionView.ItemsSource>
+                                <x:Array Type="{x:Type system:String}">
+                                    <x:String>A</x:String>
+                                    <x:String>B</x:String>
+                                    <x:String>C</x:String>
+                                    <x:String>D</x:String>
+                                    <x:String>D</x:String>
+                                    <x:String>B</x:String>
+                                    <x:String>C</x:String>
+                                    <x:String>D</x:String>
+                                    <x:String>D</x:String>
+                                </x:Array>
+                            </ct:NestedChildCollectionView.ItemsSource>
+                            <ct:NestedChildCollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" ></GridItemsLayout>
+                            </ct:NestedChildCollectionView.ItemsLayout>
+                            <ct:NestedChildCollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid BackgroundColor="Blue" HeightRequest="50"></Grid>
+                                </DataTemplate>
+                            </ct:NestedChildCollectionView.ItemTemplate>
+                        </ct:NestedChildCollectionView>
+                    </StackLayout>
+                </DataTemplate>
+            </ct:NestedParentCollectionView.ItemTemplate>
+        </ct:NestedParentCollectionView>-->
+        <ct:CoordinatorView>
+            <ct:CoordinatorView.HeaderView>
+                <Grid HeightRequest="80" BackgroundColor="Aqua"></Grid>
+            </ct:CoordinatorView.HeaderView>
+            <ct:CoordinatorView.AdsorptionView>
+                <Grid HeightRequest="40" BackgroundColor="AntiqueWhite"></Grid>
+            </ct:CoordinatorView.AdsorptionView>
+            <ct:CoordinatorView.NestedCollectionView>
+                <ct:NestedChildCollectionView>
+                    <ct:NestedChildCollectionView.ItemsSource>
+                        <x:Array Type="{x:Type system:String}">
+                            <x:String>A</x:String>
+                            <x:String>B</x:String>
+                            <x:String>C</x:String>
+                            <x:String>D</x:String>
+                            <x:String>D</x:String>
+                            <x:String>B</x:String>
+                            <x:String>C</x:String>
+                            <x:String>D</x:String>
+                            <x:String>D</x:String>
+                        </x:Array>
+                    </ct:NestedChildCollectionView.ItemsSource>
+                    <ct:NestedChildCollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" ></GridItemsLayout>
+                    </ct:NestedChildCollectionView.ItemsLayout>
+                    <ct:NestedChildCollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="Blue" HeightRequest="50"></Grid>
+                        </DataTemplate>
+                    </ct:NestedChildCollectionView.ItemTemplate>
+                </ct:NestedChildCollectionView>
+            </ct:CoordinatorView.NestedCollectionView>
+        </ct:CoordinatorView>
+    </ContentPage.Content>
+</ContentPage>
