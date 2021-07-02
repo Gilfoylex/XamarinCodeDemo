@@ -11,7 +11,7 @@ namespace XamarinCodeDemo
         {
             InitializeComponent();
 
-            MainPage = new TestNestedScrollPage();
+            MainPage = new NavigationPage(new TestNestedScrollPage());
         }
 
         protected override void OnStart()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinCodeDemo.ViewModel;
 
 namespace XamarinCodeDemo.Pages
 {
@@ -15,6 +16,7 @@ namespace XamarinCodeDemo.Pages
         public TestNestedScrollPage()
         {
             InitializeComponent();
+            BindingContext = new CoordinatorViewModel();
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
+using XamarinCodeDemo.ViewModel;
 
 namespace XamarinCodeDemo.Controls
 {
@@ -44,8 +47,24 @@ namespace XamarinCodeDemo.Controls
             set => SetValue(AdsorptionViewProperty, value);
         }
 
-        public static readonly BindableProperty NestedCollectionViewProperty = BindableProperty.Create(
-            nameof(AdsorptionView),
+        //public static readonly BindableProperty NestedCollectionViewProperty = BindableProperty.Create(
+        //    nameof(NestedCollectionView),
+        //    typeof(NestedChildCollectionView),
+        //    typeof(CoordinatorView)
+        //);
+
+        ///// <summary>
+        ///// 内嵌的垂直滚动布局
+        ///// </summary>
+        //public NestedChildCollectionView NestedCollectionView
+        //{
+        //    get => (NestedChildCollectionView)GetValue(NestedCollectionViewProperty);
+        //    set => SetValue(NestedCollectionViewProperty, value);
+        //}
+
+
+        public static readonly BindableProperty NestedChildViewProperty = BindableProperty.Create(
+            nameof(NestedChildView),
             typeof(View),
             typeof(CoordinatorView)
         );
@@ -53,24 +72,24 @@ namespace XamarinCodeDemo.Controls
         /// <summary>
         /// 内嵌的垂直滚动布局
         /// </summary>
-        public NestedChildCollectionView NestedCollectionView
+        public View NestedChildView
         {
-            get => (NestedChildCollectionView)GetValue(NestedCollectionViewProperty);
-            set => SetValue(NestedCollectionViewProperty, value);
+            get => (View)GetValue(NestedChildViewProperty);
+            set => SetValue(NestedChildViewProperty, value);
         }
-
 
         #endregion
         private NestedParentCollectionView _nestedParentCollectionView;
-        private NestedChildCollectionView _nestedChildCollectionView;
+        //private NestedChildCollectionView _nestedChildCollectionView;
         private StackLayout _nestedStackLayout;
 
         private View _headerView;
         private View _adsorptionView;
+        private View _nestedChildView;
 
         public CoordinatorView()
         {
-            VerticalOptions = LayoutOptions.FillAndExpand;
+            //VerticalOptions = LayoutOptions.FillAndExpand;
             _nestedParentCollectionView = new NestedParentCollectionView();
 
             // _nestedParentCollectionView 的header 作为 CoordinatorView 的 headerview
@@ -88,6 +107,15 @@ namespace XamarinCodeDemo.Controls
 
             Content = _nestedParentCollectionView;
 
+            this.BindingContextChanged += CoordinatorView_BindingContextChanged;
+
+        }
+
+
+        // 更新继承的viewModel, 要不然嵌套的滑动布局找不到外层的viewModel
+        private void CoordinatorView_BindingContextChanged(object sender, EventArgs e)
+        {
+            _nestedParentCollectionView.ItemsSource = new List<object>() { BindingContext };
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -106,9 +134,9 @@ namespace XamarinCodeDemo.Controls
                 ReplaceAdsorptionView();
             }
 
-            if (propertyName == NestedCollectionViewProperty.PropertyName)
+            if (propertyName == NestedChildViewProperty.PropertyName)
             {
-                ReplaceNestedCollectionView();
+                ReplaceNestedView();
             }
         }
 
@@ -126,8 +154,8 @@ namespace XamarinCodeDemo.Controls
 
         private void ReplaceAdsorptionView()
         {
-            if (_nestedChildCollectionView != null)
-                _nestedStackLayout.Children.Remove(_nestedChildCollectionView);
+            if (_nestedChildView != null)
+                _nestedStackLayout.Children.Remove(_nestedChildView);
 
             if (_adsorptionView != null)
                 _nestedStackLayout.Children.Remove(_adsorptionView);
@@ -138,22 +166,22 @@ namespace XamarinCodeDemo.Controls
                 _adsorptionView = AdsorptionView;
             }
 
-            if (NestedCollectionView != null)
+            if (NestedChildView != null)
             {
-                _nestedStackLayout.Children.Add(NestedCollectionView);
-                _nestedChildCollectionView = NestedCollectionView;
+                _nestedStackLayout.Children.Add(NestedChildView);
+                _nestedChildView = NestedChildView;
             }
         }
 
-        private void ReplaceNestedCollectionView()
+        private void ReplaceNestedView()
         {
-            if (_nestedChildCollectionView != null)
-                _nestedStackLayout.Children.Remove(_nestedChildCollectionView);
+            if (_nestedChildView != null)
+                _nestedStackLayout.Children.Remove(_nestedChildView);
 
-            if (NestedCollectionView != null)
+            if (NestedChildView != null)
             {
-                _nestedStackLayout.Children.Add(NestedCollectionView);
-                _nestedChildCollectionView = NestedCollectionView;
+                _nestedStackLayout.Children.Add(NestedChildView);
+                _nestedChildView = NestedChildView;
             }
         }
     }

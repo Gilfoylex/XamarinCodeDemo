@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ct="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
              xmlns:system="clr-namespace:System;assembly=netstandard"
+             NavigationPage.HasNavigationBar="false"
              x:Class="XamarinCodeDemo.Pages.TestNestedScrollPage">
     <ContentPage.Content>
         <!--<ct:NestedParentCollectionView>
@@ -47,24 +48,28 @@
         </ct:NestedParentCollectionView>-->
         <ct:CoordinatorView>
             <ct:CoordinatorView.HeaderView>
-                <Grid HeightRequest="80" BackgroundColor="Aqua"></Grid>
+                <Grid HeightRequest="80" BackgroundColor="Aqua">
+                    <Label Text="{Binding TestStr}"></Label>
+                </Grid>
             </ct:CoordinatorView.HeaderView>
             <ct:CoordinatorView.AdsorptionView>
-                <Grid HeightRequest="40" BackgroundColor="AntiqueWhite"></Grid>
+                <Grid HeightRequest="40" BackgroundColor="AntiqueWhite">
+                    <Label Text="{Binding TestStr}"></Label>
+                </Grid>
             </ct:CoordinatorView.AdsorptionView>
-            <ct:CoordinatorView.NestedCollectionView>
+            <ct:CoordinatorView.NestedChildView>
                 <ct:NestedChildCollectionView>
                     <ct:NestedChildCollectionView.ItemsSource>
                         <x:Array Type="{x:Type system:String}">
                             <x:String>A</x:String>
                             <x:String>B</x:String>
-                            <x:String>C</x:String>
+                            <!--<x:String>C</x:String>
                             <x:String>D</x:String>
                             <x:String>D</x:String>
                             <x:String>B</x:String>
                             <x:String>C</x:String>
                             <x:String>D</x:String>
-                            <x:String>D</x:String>
+                            <x:String>D</x:String>-->
                         </x:Array>
                     </ct:NestedChildCollectionView.ItemsSource>
                     <ct:NestedChildCollectionView.ItemsLayout>
@@ -76,7 +81,7 @@
                         </DataTemplate>
                     </ct:NestedChildCollectionView.ItemTemplate>
                 </ct:NestedChildCollectionView>
-            </ct:CoordinatorView.NestedCollectionView>
+            </ct:CoordinatorView.NestedChildView>
         </ct:CoordinatorView>
     </ContentPage.Content>
 </ContentPage>

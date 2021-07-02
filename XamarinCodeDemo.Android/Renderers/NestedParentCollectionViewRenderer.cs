@@ -1,4 +1,5 @@
-﻿using Android.Content;
+﻿using System;
+using Android.Content;
 using Android.Views;
 using AndroidX.Core.View;
 using AndroidX.RecyclerView.Widget;
@@ -84,6 +85,7 @@ namespace XamarinCodeDemo.Droid.Renderers
                 var lp = child.LayoutParameters;
                 lp.Height = MeasuredHeight;
                 child.LayoutParameters = lp;
+                Console.WriteLine($"AAAAAAAAAAAAAAAAAAAAAAAA ,{lp.Height}");
                 mContentView = (ViewGroup) child;
             }
         }
