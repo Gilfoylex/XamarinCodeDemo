@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             SizeChanged="TestCarouselViewPage_OnSizeChanged"
+             xmlns:views="clr-namespace:XamarinCodeDemo.Views;assembly=XamarinCodeDemo"
+             xmlns:ct="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
+             x:Class="XamarinCodeDemo.Pages.TestCarouselViewPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="44" BackgroundColor="Aqua"></Grid>
+            <ct:MyCarouselView BackgroundColor="Aquamarine" VerticalOptions="FillAndExpand" x:Name="CarouselView" SizeChanged="VisualElement_OnSizeChanged">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type system:String}">
+                        <x:String>A</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <views:ItemView></views:ItemView>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </ct:MyCarouselView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

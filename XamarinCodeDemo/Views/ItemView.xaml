@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             SizeChanged="ItemView_OnSizeChanged"
+             x:Class="XamarinCodeDemo.Views.ItemView">
+  <ContentView.Content>
+      <StackLayout BackgroundColor="BlanchedAlmond">
+          <Label Text="Hello Xamarin.Forms!" />
+            <Button Clicked="Button_OnClicked"></Button>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

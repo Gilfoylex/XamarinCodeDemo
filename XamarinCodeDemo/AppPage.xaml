@@ -6,6 +6,7 @@
         <StackLayout>
             <Button Text="测试嵌套滑动" Clicked="Nested_OnClicked"></Button>
             <Button Text="测试生命周期" Clicked="Life_OnClicked"></Button>
+            <Button Text="测试旋转页面的输入" Clicked="Carousel_OnClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

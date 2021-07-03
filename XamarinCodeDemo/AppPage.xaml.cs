@@ -27,5 +27,10 @@ namespace XamarinCodeDemo
         {
             await Navigation.PushAsync(new TestLoadUnloadPage());
         }
+
+        private async void Carousel_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestCarouselViewPage());
+        }
     }
 }
