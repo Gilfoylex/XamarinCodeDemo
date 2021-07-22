@@ -25,19 +25,38 @@ namespace XamarinCodeDemo.Droid.Renderers
         {
         }
 
+        private bool _playVideoOnce = true;
         public override void OnChildAttachedToWindow(View child)
         {
             var lp = child.LayoutParameters;
-            lp.Height = LinearLayout.LayoutParams.MatchParent;
+            lp.Height = LinearLayout.LayoutParams.MatchParent; // TODO 这样就可以保证铺满
             child.LayoutParameters = lp;
             //base.OnChildAttachedToWindow(child);
-            
+
+            //参考微信的逻辑，进入预览界面时是视频就自动播放。切换到另外的视频不要自动播放
+            if (_playVideoOnce && child is ViewGroup vg && vg.ChildCount > 0)
+            {
+                var vView = vg.GetChildAt(0);
+                if (vView is MyVideoViewRenderer previewVideoView)
+                {
+                    previewVideoView.AttachedFromParent();
+                }
+            }
+
+            _playVideoOnce = false;
+
             Console.WriteLine("fuck Attached to window");
         }
 
         public override void OnChildDetachedFromWindow(View child)
         {
             base.OnChildDetachedFromWindow(child);
+            if (child is ViewGroup gView)
+            {
+                var x = gView.GetChildAt(0);
+                if (x is MyVideoViewRenderer y)
+                    y.DetachedFromParent();
+            }
             Console.WriteLine("fuck child Detached from windows");
         }
 

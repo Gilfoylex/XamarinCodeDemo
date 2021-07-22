@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ct="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
+             x:Class="XamarinCodeDemo.Pages.UploadAnimation">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="100" BackgroundColor="Aqua">
+               <ct:ProcessMask x:Name="Mask" BackgroundColor="Black" VerticalOptions="End" HeightRequest="100" Process="0"></ct:ProcessMask>
+            </Grid>
+            <Button Clicked="Button_OnClicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -32,5 +32,30 @@ namespace XamarinCodeDemo
         {
             await Navigation.PushAsync(new TestCarouselViewPage());
         }
+
+        private async void TestVideo_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestVideoPage());
+        }
+
+        private async void TestVideo2_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestVideoPage2());
+        }
+
+        private async void TestTabBtn_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestTabbarBtnPage());
+        }
+
+        private async void TestBadgeBtn_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestBadgeViewPage());
+        }
+
+        private async void TestUpload_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UploadAnimation());
+        }
     }
 }

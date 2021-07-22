@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:sel="clr-namespace:XamarinCodeDemo.Selector;assembly=XamarinCodeDemo"
+             xmlns:ct="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
+             x:Class="XamarinCodeDemo.Pages.TestVideoPage">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="tt">
+            <ct:MyVideoView VideoUrl="{Binding MediaUrl}"></ct:MyVideoView>
+            <!--<xct:MediaElement VerticalOptions="FillAndExpand" Source="{Binding .}" HorizontalOptions="FillAndExpand" ShowsPlaybackControls="True" AutoPlay="False"></xct:MediaElement>-->
+        </DataTemplate>
+        <DataTemplate x:Key="t2">
+            <Label Text="ImageArea" TextColor="Blue"></Label>
+            <!--<xct:MediaElement VerticalOptions="FillAndExpand" Source="{Binding .}" HorizontalOptions="FillAndExpand" ShowsPlaybackControls="True" AutoPlay="False"></xct:MediaElement>-->
+        </DataTemplate>
+        <sel:MediaItemSelector x:Key="Selector" ImageItemTemplate="{StaticResource t2}"
+                               VideoItemTemplate="{StaticResource tt}" ></sel:MediaItemSelector>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ct:MyCarouselView Loop="False" PositionChanged="Ff_OnPositionChanged" ItemsSource="{Binding MediaInfos}" ItemTemplate="{StaticResource Selector}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

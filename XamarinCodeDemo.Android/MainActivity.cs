@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using MediaManager;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace XamarinCodeDemo.Droid
@@ -17,6 +18,13 @@ namespace XamarinCodeDemo.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            FFImageLoading.ImageService.Instance.Initialize();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.InitImageViewHandler();
+
+            // CrossMediaManager
+            CrossMediaManager.Current.Init(this);
             LoadApplication(new App());
 
             Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);

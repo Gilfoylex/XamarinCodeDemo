@@ -7,6 +7,12 @@
             <Button Text="测试嵌套滑动" Clicked="Nested_OnClicked"></Button>
             <Button Text="测试生命周期" Clicked="Life_OnClicked"></Button>
             <Button Text="测试旋转页面的输入" Clicked="Carousel_OnClicked"></Button>
+            <Button Text="测试视频播放" Clicked="TestVideo_OnClicked"></Button>
+            <Button Text="测试视频播放2" Clicked="TestVideo2_OnClicked"></Button>
+            <Button Text="测试Tab按钮" Clicked="TestTabBtn_OnClicked"></Button>
+            <Button Text="测试提示徽章" Clicked="TestBadgeBtn_OnClicked"></Button>
+            <Button Text="测试多媒体资源选取" Clicked="TestUpload_OnClicked"></Button>
+            <Button Text="测试上传动画1" Clicked="TestUpload_OnClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
