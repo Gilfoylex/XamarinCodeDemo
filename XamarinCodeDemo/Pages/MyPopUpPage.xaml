@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:rg="http://rotorgames.com"
+              x:Class="XamarinCodeDemo.Pages.MyPopUpPage">
+    <rg:PopupPage.Animation>
+        <rg:ScaleAnimation PositionIn="Bottom" PositionOut="Bottom" DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn"
+                           HasBackgroundAnimation="True">
+        </rg:ScaleAnimation>
+    </rg:PopupPage.Animation>
+    <StackLayout 
+                 VerticalOptions="EndAndExpand" 
+                 HorizontalOptions="FillAndExpand" 
+    >
+        <Label Text="你好"></Label>
+        <Frame  HorizontalOptions="FillAndExpand" HeightRequest="200" >
+            <StackLayout>
+                <Label Text="This is test label"></Label>
+                <Label Text="This is test label"></Label>
+                <Button  Text="close" Clicked="Button_OnClicked"></Button>
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+</rg:PopupPage>

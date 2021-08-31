@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:controls="clr-namespace:XamarinCodeDemo.Controls;assembly=XamarinCodeDemo"
+             x:Class="XamarinCodeDemo.Pages.TestIMPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Blue" Spacing="0">
+            <!--<controls:ImMessageView VerticalOptions="Start" ItemSizingStrategy="MeasureAllItems" BackgroundColor="Aqua">
+                --><!--<CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="2" Orientation="Vertical" ></GridItemsLayout>
+                </CollectionView.ItemsLayout>--><!--
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type system:String}">
+                        --><!--<x:String>A</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                        <x:String>D</x:String>
+                        <x:String>D</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                        <x:String>D</x:String>
+                        <x:String>D</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                        <x:String>A</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                        <x:String>D</x:String>
+                        <x:String>D</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                        <x:String>D</x:String>
+                        <x:String>D</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>--><!--
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label FontSize="20" Text="{Binding .}" BackgroundColor="Aquamarine"></Label>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </controls:ImMessageView>
+            <Frame HeightRequest="50" VerticalOptions="End" BackgroundColor="Orange"></Frame>-->
+
+            <Grid HeightRequest="44" BackgroundColor="AntiqueWhite">
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Label Text="ffafsdfsdkjfkdlfjkd" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                    <Button Text="fff" HorizontalOptions="Center"></Button>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

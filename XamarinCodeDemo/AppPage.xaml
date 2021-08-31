@@ -3,16 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinCodeDemo.AppPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="测试嵌套滑动" Clicked="Nested_OnClicked"></Button>
-            <Button Text="测试生命周期" Clicked="Life_OnClicked"></Button>
-            <Button Text="测试旋转页面的输入" Clicked="Carousel_OnClicked"></Button>
-            <Button Text="测试视频播放" Clicked="TestVideo_OnClicked"></Button>
-            <Button Text="测试视频播放2" Clicked="TestVideo2_OnClicked"></Button>
-            <Button Text="测试Tab按钮" Clicked="TestTabBtn_OnClicked"></Button>
-            <Button Text="测试提示徽章" Clicked="TestBadgeBtn_OnClicked"></Button>
-            <Button Text="测试多媒体资源选取" Clicked="TestUpload_OnClicked"></Button>
-            <Button Text="测试上传动画1" Clicked="TestUpload_OnClicked"></Button>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="测试聊天列表" Clicked="TestImList_OnClicked"></Button>
+                <Button Text="测试嵌套滑动" Clicked="Nested_OnClicked"></Button>
+                <Button Text="测试生命周期" Clicked="Life_OnClicked"></Button>
+                <Button Text="测试旋转页面的输入" Clicked="Carousel_OnClicked"></Button>
+                <Button Text="测试视频播放" Clicked="TestVideo_OnClicked"></Button>
+                <Button Text="测试视频播放2" Clicked="TestVideo2_OnClicked"></Button>
+                <Button Text="测试Tab按钮" Clicked="TestTabBtn_OnClicked"></Button>
+                <Button Text="测试提示徽章" Clicked="TestBadgeBtn_OnClicked"></Button>
+                <Button Text="测试多媒体资源选取" Clicked="TestUpload_OnClicked"></Button>
+                <Button Text="测试上传动画1" Clicked="TestUpload_OnClicked"></Button>
+                <Button Text="测试多媒体资源选择2" Clicked="TestPickerMedia_OnClicked"></Button>
+                <Button Text="测试弹窗" Clicked="TestPopUp_OnClicked"></Button>
+                <Button Text="测试分组" Clicked="TestGroup_OnClicked"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

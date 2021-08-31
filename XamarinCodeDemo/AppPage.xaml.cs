@@ -16,6 +16,8 @@ namespace XamarinCodeDemo
         public AppPage()
         {
             InitializeComponent();
+
+            var x = false.ToString();
         }
 
         private async void Nested_OnClicked(object sender, EventArgs e)
@@ -56,6 +58,25 @@ namespace XamarinCodeDemo
         private async void TestUpload_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UploadAnimation());
+        }
+
+        private async void TestPickerMedia_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new TestGrallyPage());
+        }
+
+        private async void TestPopUp_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestPopupPage());
+        }
+
+        private async void TestGroup_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GroupList());
+        }
+        private async void TestImList_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestIMPage());
         }
     }
 }
